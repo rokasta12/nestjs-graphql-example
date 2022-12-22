@@ -1,0 +1,100 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type User {
+  """Example field (placeholder)"""
+  id: Int!
+
+  """Example field (placeholder)"""
+  name: String!
+
+  """Example field (placeholder)"""
+  email: String!
+
+  """Example field (placeholder)"""
+  password: String!
+
+  """Example field (placeholder)"""
+  faces: String
+}
+
+type Face {
+  """Example field (placeholder)"""
+  id: Int!
+
+  """Example field (placeholder)"""
+  name: String!
+
+  """Example field (placeholder)"""
+  trainingFinishedAt: String!
+
+  """Example field (placeholder)"""
+  isModelTrained: String!
+
+  """Training output files"""
+  ctpkOutputUrl: String
+
+  """Training output files"""
+  user: User
+}
+
+type Query {
+  faces: [Face!]!
+  face(id: Int!): Face!
+  users: [User!]!
+  user(id: Int!): User!
+}
+
+type Mutation {
+  createFace(createFaceInput: CreateFaceInput!): Face!
+  updateFace(updateFaceInput: UpdateFaceInput!): Face!
+  removeFace(id: Int!): Face!
+  createUser(createUserInput: CreateUserInput!): User!
+  updateUser(updateUserInput: UpdateUserInput!): User!
+  removeUser(id: Int!): User!
+}
+
+input CreateFaceInput {
+  """Example field (placeholder)"""
+  id: Int!
+
+  """Example field (placeholder)"""
+  name: String!
+
+  """Example field (placeholder)"""
+  trainingFinishedAt: String!
+
+  """Example field (placeholder)"""
+  isModelTrained: Boolean! = false
+
+  """Training output files"""
+  ctpkOutputUrl: String
+}
+
+input UpdateFaceInput {
+  id: Int!
+
+  """Example field (placeholder)"""
+  name: String
+
+  """Example field (placeholder)"""
+  trainingFinishedAt: String
+
+  """Example field (placeholder)"""
+  isModelTrained: Boolean = false
+
+  """Training output files"""
+  ctpkOutputUrl: String
+}
+
+input CreateUserInput {
+  """Example field (placeholder)"""
+  exampleField: Int!
+}
+
+input UpdateUserInput {
+  """Example field (placeholder)"""
+  exampleField: Int
+  id: Int!
+}
